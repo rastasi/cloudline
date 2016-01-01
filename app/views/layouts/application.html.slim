@@ -24,21 +24,10 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
             .row
               .large-12.columns
                 #main
-                  #content
-                    br
-                    - if @bcs
-                      ul.breadcrumbs
-                        - @bcs.each do |item|
-                          li=item
-                    - if flash[:error]
-                      .alert-box.warning
-                        =flash[:error]
-                    - if flash[:success]
-                      .alert-box.success
-                        =flash[:success]
+                  .precontent=render 'shared/precontent'
+                  .content
                     =yield
-                  #footer="Copyright &copy; #{Time.now.year}".html_safe
-
+                  #footer=render 'shared/footer'
           a.exit-off-canvas
     #RevealModal class='reveal-modal' data-reveal='true' 
     javascript:

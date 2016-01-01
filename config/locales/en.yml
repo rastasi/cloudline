@@ -3,6 +3,7 @@ en:
     profile: Profile
     admin: Admin
     sites: Sites
+    recent_logs: Recent logs
     logout: Log out
   sites:
     title: Sites
@@ -11,7 +12,7 @@ en:
     operations: Operations
     edit: Edit
     conditions: Conditions
+    logs: Logs
   profile:
     title: Profile
     email: E-mail
-  

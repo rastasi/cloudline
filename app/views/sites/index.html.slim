@@ -7,11 +7,12 @@ table
   - @sites.each do |site|
     tr
       td
-        = site.name
+        = link_to site.name, site_path(site)
       td
-        = site.url
+        = link_to site.url, site.full_url, target: :blank
       td
         = link_to 'sites.edit'.t, edit_site_path(site)
         = " | "
         = link_to 'sites.conditions'.t, site_conditions_path(site)
-        
+        = " | "
+        = link_to 'sites.logs'.t, site_logs_path(site)

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :sites do
     resources :conditions
+    resources :logs, only: [:index, :show]
   end
 
 end
