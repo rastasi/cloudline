@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+=begin
+User.create!(
+  email: 'admin@example.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+=end
+
+Site.create!(
+  name: 'Syrakuza',
+  url: 'syrakuza.hu',
+  protocol: 'http',
+  active: true
+)
+
+Site.create!(
+  name: 'Teletype.hu',
+  url: 'teletype.hu',
+  protocol: 'http',
+  active: true
+)
