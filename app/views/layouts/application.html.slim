@@ -11,43 +11,34 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
         .inner-wrap
           nav.tab-bar
             section.middle.tab-bar-section
-              a href='/' 
-                img src='/img/logo.png' alt='Cloudline' title='Cloudline' 
+              a href=frontpage_path
+                 -#img src='/img/logo.png' alt='Cloudline' title='Cloudline' 
+                 h1 Cloudline
             section.right-small
               a.right-off-canvas-toggle.menu-icon href="#" 
                 span
           aside.right-off-canvas-menu
-            ul.off-canvas-list
-              - unless current_user
-                li=link_to 'menu.login'.t, '/login'
-              - if current_user
-                li=link_to 'menu.account'.t, '/account'
-                li=link_to 'menu.sites'.t, '/sites'
-                
-                li=link_to 'menu.admin'.t, '/admin'
-                li=link_to 'menu.logout'.t, '/login/logout'
+            ul.off-canvas-list=render 'shared/menu'
+
           section.main-section
-            #main
-              #content
-                br
-                - if @bcs
-                  ul.breadcrumbs
-                    - @bcs.each do |item|
-                      li=item
-                - if flash[:error]
-                  .alert-box.warning
-                    =flash[:error]
-                - if flash[:success]
-                  .alert-box.success
-                    =flash[:success]
-                =yield
-              #footer
-                .column
-                  | Copyright &copy;
-                  =Time.now.year
-                  | Syrakuza Team
-                .column
-                  ul.footer-links
+            .row
+              .large-12.columns
+                #main
+                  #content
+                    br
+                    - if @bcs
+                      ul.breadcrumbs
+                        - @bcs.each do |item|
+                          li=item
+                    - if flash[:error]
+                      .alert-box.warning
+                        =flash[:error]
+                    - if flash[:success]
+                      .alert-box.success
+                        =flash[:success]
+                    =yield
+                  #footer="Copyright &copy; #{Time.now.year}".html_safe
+
           a.exit-off-canvas
     #RevealModal class='reveal-modal' data-reveal='true' 
     javascript:

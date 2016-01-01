@@ -1,7 +1,17 @@
+h2="sites.title".t
 table
+  tr
+    th="sites.name".t
+    th="sites.url".t
+    th="sites.operations".t
   - @sites.each do |site|
     tr
       td
         = site.name
       td
         = site.url
+      td
+        = link_to 'sites.edit'.t, edit_site_path(site)
+        = " | "
+        = link_to 'sites.conditions'.t, site_conditions_path(site)
+        

@@ -1,0 +1,8 @@
+- unless current_user
+  li=link_to 'menu.login'.t, user_session_path
+- if current_user
+  li=link_to 'menu.profile'.t,  current_user
+  li=link_to 'menu.sites'.t, sites_path
+  
+  li=link_to 'menu.admin'.t, admin_root_path
+  li=link_to 'menu.logout'.t, destroy_session_path(current_user)
