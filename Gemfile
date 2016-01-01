@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'slim-rails'
+gem 'foundation-rails'
+gem 'ckeditor'
+gem 'ckeditor_rails'
+gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin-ckeditor', github: 'maximgladkov/activeadmin-ckeditor'
+gem 'puma'
+gem 'paperclip'
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
