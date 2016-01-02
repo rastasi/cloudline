@@ -49,9 +49,9 @@ class CheckProcess
           end
 
           @condition_details.push({
-            :ctype=>condition.ctype,
-            :value=>condition.value,
-            :ready=>ready
+            ctype: condition.ctype,
+            value: condition.value,
+            ready: ready
           })
 
           @site_ready = false unless ready
@@ -60,7 +60,6 @@ class CheckProcess
 
   def build_status
     @status = @site_ready ? :ready : :failed
-
   end
 
   def update_site
