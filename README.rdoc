@@ -1,6 +1,7 @@
 in the project folder:
 
-* edit config/database.yml
+* edit config/database.yml (if required)
+* rake db:create (if you use root user)
 * rake db:migrate
 * rake db:seed
 * rails s -b 0.0.0.0
