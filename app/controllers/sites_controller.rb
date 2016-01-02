@@ -8,6 +8,24 @@ class SitesController < ApplicationController
     load_site
   end
 
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    load_site
+    @site.destroy
+    redirect_to sites_path
+  end
+
   def check
     load_site
     flash[:alert] = 'message.site_checked'.t

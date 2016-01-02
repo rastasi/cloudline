@@ -1,1 +1,4 @@
 h2= @site.name
+
+.operations
+  = link_to "sites.delete".t, site_path(@site), class: "button alert", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }

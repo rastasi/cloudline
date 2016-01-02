@@ -1,5 +1,5 @@
 doctype Strict
-html lang='en' xmlns='http://www.w3.org/1999/xhtml' 
+html lang='en' xmlns='http://www.w3.org/1999/xhtml'
   head
     title Cloudline
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
@@ -7,28 +7,32 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
     = csrf_meta_tags
   body
     #wrapper
-      .off-canvas-wrap data-offcanvas="" 
+      .off-canvas-wrap data-offcanvas=""
         .inner-wrap
+
+          // HEADER
           nav.tab-bar
             section.middle.tab-bar-section
-              a href=frontpage_path
-                 -#img src='/img/logo.png' alt='Cloudline' title='Cloudline' 
+              a.title href=frontpage_path
                  h1 Cloudline
             section.right-small
-              a.right-off-canvas-toggle.menu-icon href="#" 
+              a.right-off-canvas-toggle.menu-icon href="#"
                 span
-          aside.right-off-canvas-menu
+
+          // SIDEBAR
+          aside.sidebar.right-off-canvas-menu
             ul.off-canvas-list=render 'shared/menu'
 
-          section.main-section
+          // CONTENT
+          section.main-wrapper.main-section
             .row
               .large-12.columns
                 #main
                   .precontent=render 'shared/precontent'
-                  .content
-                    =yield
-                  #footer=render 'shared/footer'
+                  .content=yield
+                #footer=render 'shared/footer'
+
           a.exit-off-canvas
-    #RevealModal class='reveal-modal' data-reveal='true' 
+    #RevealModal class='reveal-modal' data-reveal='true'
     javascript:
       | $(document).foundation();
