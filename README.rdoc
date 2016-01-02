@@ -1,5 +1,7 @@
 in the project folder:
 
+* gem install bundler (if not installed)
+* bundle install
 * edit config/database.yml (if required)
 * rake db:create (if you use root user)
 * rake db:migrate
