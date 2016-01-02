@@ -9,6 +9,7 @@ class CreateSites < ActiveRecord::Migration
       t.string :http_method
       t.boolean :active
       t.string :status
+      t.integer :check_interval
       t.datetime :last_check
       t.timestamps null: false
     end

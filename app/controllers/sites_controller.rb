@@ -49,7 +49,7 @@ class SitesController < ApplicationController
   private
 
   def permitted_params
-    params.require(:site).permit(:name, :description, :url, :protocol, :http_method, :active)
+    params.require(:site).permit(:name, :description, :url, :protocol, :http_method, :check_interval, :active)
   end
 
   def load_site

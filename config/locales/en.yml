@@ -30,6 +30,7 @@ en:
     save: Save site
     update: Update site
     new_condition: New condition
+    check_interval: Check interval
   conditions:
     title:
       index: "Conditions"

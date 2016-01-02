@@ -14,5 +14,8 @@
   = "sites.http_method".t
   = select :site, :http_method, SITE_HTTP_METHODS
 .field
+  = "sites.check_interval".t
+  = select :site, :check_interval, SITE_CHECK_INTERVALS_FOR_FREE
+.field
   = "sites.active".t
   = check_box :site, :active
