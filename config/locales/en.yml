@@ -26,6 +26,8 @@ en:
     status: Status
     back: Back
     new: New site
+    save: Save site
+    update: Update site
   conditions:
     title:
       index: "Conditions of %{site}"

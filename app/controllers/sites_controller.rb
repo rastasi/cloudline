@@ -12,6 +12,12 @@ class SitesController < ApplicationController
   end
 
   def create
+    @site = Site.create!(permitted_params)
+    if @site
+      redirect_to site_path(@site)
+    else
+      redirect_to new_site_path()
+    end
   end
 
   def edit
@@ -19,6 +25,12 @@ class SitesController < ApplicationController
   end
 
   def update
+    load_site
+    if @site.update_attributes(permitted_params)
+      redirect_to site_path(@site)
+    else
+      redirect_to edit_site_path(@site)
+    end
   end
 
   def destroy
@@ -34,6 +46,10 @@ class SitesController < ApplicationController
   end
 
   private
+
+  def permitted_params
+    params.require(:site).permit(:name, :description, :url, :protocol, :active)
+  end
 
   def load_site
     @site = Site.find(params[:id])

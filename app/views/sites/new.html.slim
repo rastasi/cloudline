@@ -1,1 +1,5 @@
 h2=t("sites.title.new")
+= form_tag sites_path, method: :post do
+  = render partial: "sites/form"
+  .operations
+    = submit_tag "sites.save".t, class: :button

@@ -1,0 +1,15 @@
+.field
+  = "sites.name".t
+  = text_field :site, :name
+.field
+  = "sites.description".t
+  = text_field :site, :description
+.field
+  = "sites.url".t
+  = text_field :site, :url
+.field
+  = "sites.protocol".t
+  = select :site, :protocol, SITE_PROTOCOLS
+.field
+  = "sites.active".t
+  = check_box :site, :active
