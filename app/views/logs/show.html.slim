@@ -1,0 +1,24 @@
+h2=t("logs.title.show", site: @site.name)
+table.large-12
+  tr
+    th="logs.created_at".t
+    td=@log.created_at
+  tr
+    th="logs.status".t
+    td=@log.status
+
+h3="logs.details".t
+table.large-12
+  tr
+    th= "logs.type".t
+    th= "logs.value".t
+    th= "logs.ready".t
+  - @log.decoded_details.each do |condition|
+    tr
+      td= condition["ctype"]
+      td= condition["value"]
+      td= condition["ready"]
+
+.operations.button-group.right
+  li= link_to "logs.back".t, site_logs_path(@site), class: :button
+  li= link_to "logs.back_site".t, site_path(@site), class: :button

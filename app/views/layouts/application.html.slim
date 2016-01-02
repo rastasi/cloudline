@@ -30,7 +30,9 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
                 #main
                   .precontent=render 'shared/precontent'
                   .content=yield
-                #footer=render 'shared/footer'
+            .row
+              .large-12.columns
+                #footer.center=render 'shared/footer'
 
           a.exit-off-canvas
     #RevealModal class='reveal-modal' data-reveal='true'

@@ -5,6 +5,7 @@ table.large-12
       td
         h3= link_to site.name, site_path(site)
       td= link_to site.url, site.full_url, target: :blank
+      td= site.status
       td
         ul.operations.button-group.right
           = render partial: "sites/operations", locals: {site: site}

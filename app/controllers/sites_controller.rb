@@ -41,6 +41,7 @@ class SitesController < ApplicationController
 
   def check
     load_site
+    ::CheckProcess.new(@site)
     flash[:alert] = 'message.site_checked'.t
     redirect_to site_path @site
   end
@@ -48,7 +49,7 @@ class SitesController < ApplicationController
   private
 
   def permitted_params
-    params.require(:site).permit(:name, :description, :url, :protocol, :active)
+    params.require(:site).permit(:name, :description, :url, :protocol, :http_method, :active)
   end
 
   def load_site

@@ -6,6 +6,7 @@ class CreateSites < ActiveRecord::Migration
       t.string :description
       t.string :url
       t.string :protocol
+      t.string :http_method
       t.boolean :active
       t.string :status
       t.datetime :last_check

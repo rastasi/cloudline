@@ -1,3 +1,13 @@
 h2=t("logs.title.index", site: @site.name)
-- @logs.each do |log|
-  p=log.status
+table.large-12
+  tr
+    th="logs.created_at".t
+    th="logs.status".t
+    th
+  - @logs.each do |log|
+    tr
+      td= log.created_at
+      td= log.status
+      td= link_to "logs.details".t, site_log_path(@site, log), class: "button right"
+.operations.button-group.right
+  li= link_to "logs.back".t, site_path(@site), class: :button

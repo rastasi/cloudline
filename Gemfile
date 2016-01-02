@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 gem 'slim-rails'
 gem 'foundation-rails'
-#gem 'ckeditor'
-#gem 'ckeditor_rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'activeadmin-ckeditor', github: 'maximgladkov/activeadmin-ckeditor'
 gem 'puma'
 gem 'paperclip'
 gem 'devise'
+
+gem 'rest-client'
 
 gem 'rails', '4.2.4'
 gem 'mysql2'

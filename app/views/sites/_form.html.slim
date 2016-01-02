@@ -11,5 +11,8 @@
   = "sites.protocol".t
   = select :site, :protocol, SITE_PROTOCOLS
 .field
+  = "sites.http_method".t
+  = select :site, :http_method, SITE_HTTP_METHODS
+.field
   = "sites.active".t
   = check_box :site, :active

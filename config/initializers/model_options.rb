@@ -16,3 +16,10 @@ SITE_PROTOCOLS = [
   :http,
   :https
 ]
+
+SITE_HTTP_METHODS = [
+  :get,
+  :post,
+  :put,
+  :delete
+]

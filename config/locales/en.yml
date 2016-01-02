@@ -11,7 +11,7 @@ en:
       index: Sites
       show: "Details of %{site}"
       edit: "Edit %{site}"
-      new: "New site"
+      new: New site
     name: Name
     url: URL
     operations: Operations
@@ -24,6 +24,7 @@ en:
     protocol: Protocol
     active: Active
     status: Status
+    http_method: HTTP method
     back: Back
     new: New site
     save: Save site
@@ -31,7 +32,7 @@ en:
     new_condition: New condition
   conditions:
     title:
-      index: "Conditions of %{site}"
+      index: "Conditions"
       new: New condition
     type: Type
     value: Value
@@ -39,10 +40,18 @@ en:
     update: Update condition
     edit: Edit
     delete: Delete
-
   logs:
     title:
       index: "Logs of %{site}"
+      show: "Log of %{site}"
+    back: Back
+    back_site: Back to site
+    details: Details
+    status: Status
+    created_at: Created at
+    type: Type
+    value: Value
+    ready: Ready?
   profile:
     title: Profile
     email: E-mail
