@@ -24,7 +24,6 @@ SITE_HTTP_METHODS = [
   :delete
 ]
 
-
 SITE_CHECK_INTERVALS_FOR_FREE = [
   10,
   20,
@@ -52,4 +51,10 @@ SITE_CHECK_INTERVALS_FOR_PREMIUM = [
   1220,
   1440,
   1080
+]
+
+USER_ROLES = [
+  :normal,
+  :premium,
+  :admin
 ]

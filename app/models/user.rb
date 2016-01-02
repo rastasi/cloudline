@@ -5,4 +5,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :sites
+
+  def is_normal?
+    role == 'normal'
+  end
+
+  def is_premium?
+    role == 'premium'
+  end
+
+  def is_admin?
+    role == 'admin'
+  end
+
 end
