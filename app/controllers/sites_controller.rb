@@ -57,7 +57,7 @@ class SitesController < ApplicationController
   end
 
   def load_sites
-    @sites = Site.all
+    @sites = current_user.sites
   end
 
 end
