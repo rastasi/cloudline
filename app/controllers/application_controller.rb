@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     redirect_to sites_path if current_user
   end
 
+  def check_ownership
+    redirect_to error_403_path if @site.user != current_user
+  end
+
 end

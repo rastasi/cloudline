@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
-  
+
   before_filter :authenticate_user!
-  before_filter :load_site, except: [:index, :new, :create]
+  before_filter :load_site, :check_ownership, except: [:index, :new, :create]
 
   def index
     load_sites

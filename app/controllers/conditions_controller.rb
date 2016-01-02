@@ -1,7 +1,7 @@
 class ConditionsController < ApplicationController
-  
+
   before_filter :authenticate_user!
-  before_filter :load_site
+  before_filter :load_site, :check_ownership
   before_filter :load_condition, except: [:index, :new, :create]
 
   def index

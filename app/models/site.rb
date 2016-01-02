@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  belongs_to :User
+  belongs_to :user
   has_many :conditions
   has_many :logs
 
