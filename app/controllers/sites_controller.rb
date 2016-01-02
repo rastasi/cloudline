@@ -1,11 +1,13 @@
 class SitesController < ApplicationController
+  
+  before_filter :authenticate_user!
+  before_filter :load_site, except: [:index, :new, :create]
 
   def index
     load_sites
   end
 
   def show
-    load_site
   end
 
   def new
@@ -21,11 +23,9 @@ class SitesController < ApplicationController
   end
 
   def edit
-    load_site
   end
 
   def update
-    load_site
     if @site.update_attributes(permitted_params)
       redirect_to site_path(@site)
     else
@@ -34,13 +34,11 @@ class SitesController < ApplicationController
   end
 
   def destroy
-    load_site
     @site.destroy
     redirect_to sites_path
   end
 
   def check
-    load_site
     ::CheckProcess.new(@site)
     flash[:alert] = 'message.site_checked'.t
     redirect_to site_path @site

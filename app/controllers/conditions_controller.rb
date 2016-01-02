@@ -1,17 +1,17 @@
 class ConditionsController < ApplicationController
-
+  
+  before_filter :authenticate_user!
   before_filter :load_site
+  before_filter :load_condition, except: [:index, :new, :create]
 
   def index
     build_conditions
   end
 
   def show
-    load_condition
   end
 
   def new
-
   end
 
   def create
@@ -26,11 +26,9 @@ class ConditionsController < ApplicationController
   end
 
   def edit
-    load_condition
   end
 
   def update
-    load_condition
     if @condition.update_attributes(permitted_params)
       redirect_to site_path(@site)
     else
@@ -39,7 +37,6 @@ class ConditionsController < ApplicationController
   end
 
   def destroy
-    load_condition
     @condition.destroy
     redirect_to site_path(@site)
   end
