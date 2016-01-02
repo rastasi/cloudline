@@ -4,6 +4,7 @@ en:
     admin: Admin
     sites: Sites
     recent_logs: Recent logs
+    login: Log in
     logout: Log out
   sites:
     title: Sites
@@ -13,6 +14,7 @@ en:
     edit: Edit
     conditions: Conditions
     logs: Logs
+    check: Check
   profile:
     title: Profile
     email: E-mail

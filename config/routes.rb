@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'application#index', as: :frontpage
 
   resources :sites do
+    member do
+      get :check
+    end
     resources :conditions
     resources :logs, only: [:index, :show]
   end

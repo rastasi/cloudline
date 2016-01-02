@@ -7,7 +7,13 @@ class SitesController < ApplicationController
   def show
     load_site
   end
-  
+
+  def check
+    load_site
+    flash[:alert] = 'message.site_checked'.t
+    redirect_to site_path @site
+  end
+
   private
 
   def load_site
