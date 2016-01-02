@@ -1,5 +1,5 @@
 h2=t("sites.title.show", site: @site.name)
-table.large-12
+table.large-12.columns
   tr
     th="sites.description".t
     td=@site.description
@@ -23,7 +23,7 @@ table.large-12
     td=@site.status
 
 h3= "conditions.title.index".t
-table.large-12
+table.large-12.columns
   - @site.conditions.each do |condition|
     tr
       th=condition.ctype

@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160101175814) do
 
   create_table "conditions", force: :cascade do |t|
     t.integer  "site_id",    limit: 4
-    t.string   "type",       limit: 255
+    t.string   "ctype",      limit: 255
     t.string   "value",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
@@ -45,16 +45,18 @@ ActiveRecord::Schema.define(version: 20160101175814) do
   end
 
   create_table "sites", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4
-    t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.string   "url",         limit: 255
-    t.string   "protocol",    limit: 255
+    t.integer  "user_id",        limit: 4
+    t.string   "name",           limit: 255
+    t.string   "description",    limit: 255
+    t.string   "url",            limit: 255
+    t.string   "protocol",       limit: 255
+    t.string   "http_method",    limit: 255
     t.boolean  "active"
-    t.string   "status",      limit: 255
+    t.string   "status",         limit: 255
+    t.integer  "check_interval", limit: 4
     t.datetime "last_check"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

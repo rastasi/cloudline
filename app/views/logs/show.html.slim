@@ -1,5 +1,5 @@
 h2=t("logs.title.show", site: @site.name)
-table.large-12
+table.large-12.columns
   tr
     th="logs.created_at".t
     td=@log.created_at
@@ -8,7 +8,7 @@ table.large-12
     td=@log.status
 
 h3="logs.details".t
-table.large-12
+table.large-12.columns
   tr
     th= "logs.type".t
     th= "logs.value".t
