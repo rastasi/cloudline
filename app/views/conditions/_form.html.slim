@@ -1,0 +1,6 @@
+.field
+  = "conditions.type".t
+  = select :condition, :ctype, CONDITION_TYPES
+.field
+  = "conditions.value".t
+  = text_field :condition, :value

@@ -1,5 +1,5 @@
-li=link_to "sites.edit".t,        edit_site_path(site),       class: "button"
-li=link_to "sites.conditions".t,  site_conditions_path(site), class: "button"
-li=link_to "sites.logs".t,        site_logs_path(site),       class: "button"
-li=link_to "sites.check".t,       check_site_path(site),      class: "button"
-li=link_to "sites.delete".t,      site_path(site),            class: "button alert", method: :delete, data: { confirm: "Are you certain you want to delete this?" }
+li=link_to "sites.edit".t,          edit_site_path(site),           class: "button"
+li=link_to "sites.logs".t,          site_logs_path(site),           class: "button"
+li=link_to "sites.check".t,         check_site_path(site),          class: "button"
+li=link_to "sites.new_condition".t, new_site_condition_path(site),  class: "button"
+li=link_to "sites.delete".t,        site_path(site),                class: "button alert", method: :delete, data: { confirm: "Are you certain you want to delete this?" }

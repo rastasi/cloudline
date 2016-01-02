@@ -16,6 +16,17 @@ table.large-12
     th="sites.status".t
     td=@site.status
 
+table.large-12
+  - @site.conditions.each do |condition|
+    tr
+      th=condition.ctype
+      td=condition.value
+      td
+        ul.operations.button-group
+          li= link_to "conditions.edit".t, edit_site_condition_path(@site, condition), class: "button"
+          li= link_to "conditions.delete".t, site_condition_path(@site, condition), class: "button alert", method: :delete, data: { confirm: "Are you certain you want to delete this?" }
+
+
 ul.operations.button-group
   li= link_to "sites.back".t, sites_path, class: "button"
   = render partial: "sites/operations", locals: {site: @site}

@@ -10,7 +10,45 @@ class ConditionsController < ApplicationController
     load_condition
   end
 
+  def new
+
+  end
+
+  def create
+    condition = Condition.new(permitted_params)
+    condition.site = @site
+    condition.save
+    if condition
+      redirect_to site_path(@site)
+    else
+      redirect_to new_site_condition(@site)
+    end
+  end
+
+  def edit
+    load_condition
+  end
+
+  def update
+    load_condition
+    if @condition.update_attributes(permitted_params)
+      redirect_to site_path(@site)
+    else
+      redirect_to site_condition_path(@site, @condition)
+    end
+  end
+
+  def destroy
+    load_condition
+    @condition.destroy
+    redirect_to site_path(@site)
+  end
+
   private
+
+  def permitted_params
+    params.require(:condition).permit(:ctype, :value, :site_id)
+  end
 
   def load_site
     @site = Site.find(params[:site_id])

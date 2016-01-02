@@ -28,9 +28,18 @@ en:
     new: New site
     save: Save site
     update: Update site
+    new_condition: New condition
   conditions:
     title:
       index: "Conditions of %{site}"
+      new: New condition
+    type: Type
+    value: Value
+    save: Save condition
+    update: Update condition
+    edit: Edit
+    delete: Delete
+
   logs:
     title:
       index: "Logs of %{site}"

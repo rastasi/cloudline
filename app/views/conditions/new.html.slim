@@ -1,0 +1,5 @@
+h2=t("conditions.title.new")
+= form_tag site_conditions_path(@site), method: :post do
+  = render partial: "conditions/form"
+  .operations
+    = submit_tag "conditions.save".t, class: :button

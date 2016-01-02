@@ -1,0 +1,5 @@
+h2= t("conditions.title.edit", site: @site.name)
+= form_tag site_condition_path(@site, @condition), method: :put do
+  = render partial: "conditions/form"
+  .operations
+    = submit_tag "conditions.update".t, class: :button
