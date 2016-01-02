@@ -7,7 +7,11 @@ en:
     login: Log in
     logout: Log out
   sites:
-    title: Sites
+    title:
+      index: Sites
+      show: "Details of %{site}"
+      edit: "Edit %{site}"
+      new: "New site"
     name: Name
     url: URL
     operations: Operations
@@ -15,6 +19,19 @@ en:
     conditions: Conditions
     logs: Logs
     check: Check
+    delete: Delete
+    description: Description
+    protocol: Protocol
+    active: Active
+    status: Status
+    back: Back
+    new: New site
+  conditions:
+    title:
+      index: "Conditions of %{site}"
+  logs:
+    title:
+      index: "Logs of %{site}"
   profile:
     title: Profile
     email: E-mail

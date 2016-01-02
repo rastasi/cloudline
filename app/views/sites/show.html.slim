@@ -1,4 +1,21 @@
-h2= @site.name
+h2=t("sites.title.show", site: @site.name)
+table.large-12
+  tr
+    th="sites.description".t
+    td=@site.description
+  tr
+    th="sites.url".t
+    td=@site.url
+  tr
+    th="sites.protocol".t
+    td=@site.protocol
+  tr
+    th="sites.active".t
+    td=@site.active
+  tr
+    th="sites.status".t
+    td=@site.status
 
-.operations
-  = link_to "sites.delete".t, site_path(@site), class: "button alert", method: :delete, data: { confirm: 'Are you certain you want to delete this?' }
+ul.operations.button-group
+  li= link_to "sites.back".t, sites_path, class: "button"
+  = render partial: "sites/operations", locals: {site: @site}

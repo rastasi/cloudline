@@ -1,20 +1,12 @@
-h2="sites.title".t
-table
-  tr
-    th="sites.name".t
-    th="sites.url".t
-    th="sites.operations".t
+h2="sites.title.index".t
+table.large-12
   - @sites.each do |site|
     tr
       td
-        = link_to site.name, site_path(site)
+        h3= link_to site.name, site_path(site)
+      td= link_to site.url, site.full_url, target: :blank
       td
-        = link_to site.url, site.full_url, target: :blank
-      td
-        = link_to 'sites.edit'.t, edit_site_path(site)
-        = " | "
-        = link_to 'sites.conditions'.t, site_conditions_path(site)
-        = " | "
-        = link_to 'sites.logs'.t, site_logs_path(site)
-        = " | "
-        = link_to 'sites.check'.t, check_site_path(site)
+        ul.operations.button-group.right
+          = render partial: "sites/operations", locals: {site: site}
+.operations
+  = link_to "sites.new".t, new_site_path, class: "button"

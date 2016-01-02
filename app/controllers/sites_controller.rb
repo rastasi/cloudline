@@ -15,6 +15,7 @@ class SitesController < ApplicationController
   end
 
   def edit
+    load_site
   end
 
   def update
