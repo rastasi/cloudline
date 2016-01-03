@@ -7,35 +7,32 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
     = csrf_meta_tags
   body
     #wrapper
-      .off-canvas-wrap data-offcanvas=""
-        .inner-wrap
+      nav.top-bar data-topbar="" role="navigation"
+        ul.title-area
+          li.name
+            h1
+              a href="/"  Cloudline
+          /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+          li.toggle-topbar.menu-icon
+            a href="#"
+              span Menu
+        section.top-bar-section
+          /! Right Nav Section
+          ul.right=render partial: 'shared/menu'
 
-          // HEADER
-          nav.tab-bar
-            section.middle.tab-bar-section
-              a.title href=frontpage_path
-                 h1 Cloudline
-            section.right-small
-              a.right-off-canvas-toggle.menu-icon href="#"
-                span
-
-          // SIDEBAR
-          aside.sidebar.right-off-canvas-menu
-            ul.off-canvas-list=render 'shared/menu'
-
-          // CONTENT
-          section.main-wrapper.main-section
-            .row
-              .large-12.columns
-                #main
-                  .precontent=render 'shared/precontent'
-                  .content=yield
-            .row
-              .large-12.columns
-                #footer.center=render 'shared/footer'
-            .row
-              .large-12.columns
-                #info-menu.center=render 'shared/info_menu'
+        // CONTENT
+        section.main-wrapper.main-section
+          .row
+            .large-12.columns
+              #main
+                .precontent=render 'shared/precontent'
+                .content=yield
+          .row
+            .large-12.columns
+              #footer.center=render 'shared/footer'
+          .row
+            .large-12.columns
+              #info-menu.center=render 'shared/info_menu'
 
           a.exit-off-canvas
     #RevealModal class='reveal-modal' data-reveal='true'

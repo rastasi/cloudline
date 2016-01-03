@@ -1,7 +1,8 @@
 user = User.create!(
   email: 'admin@cloudline.hu',
   password: 'archimedes123',
-  password_confirmation: 'archimedes123'
+  password_confirmation: 'archimedes123',
+  role: :admin
 )
 
 site1 = Site.create!(

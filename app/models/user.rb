@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def is_admin?
-    role == :admin
+    role == 'admin'
   end
 
   private
