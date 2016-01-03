@@ -1,4 +1,5 @@
 class ErrorsController < ApplicationController
+
   def not_found
     render(:status => 404)
   end
@@ -10,4 +11,5 @@ class ErrorsController < ApplicationController
   def forbidden
     render(:status => 403)
   end
+  
 end

@@ -59,3 +59,5 @@ en:
   messages:
     site_ready: 'Site is ready'
     site_not_ready: 'Site is not ready'
+  info:
+    about_us_html: "INFO"

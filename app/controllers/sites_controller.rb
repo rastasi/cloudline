@@ -3,6 +3,8 @@ class SitesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_site, :check_ownership, except: [:index, :new, :create]
 
+  NORMAL_USER_MAXIMUM_SITES_COUNT = 5
+
   def index
     load_sites
   end
@@ -11,6 +13,10 @@ class SitesController < ApplicationController
   end
 
   def new
+    if current_user.is_normal? && current_user.sites.count >= NORMAL_USER_MAXIMUM_SITES_COUNT
+      flash[:alert] = 'messages.maximum_site'.t
+      redirect_to sites_path
+    end
   end
 
   def create
@@ -47,13 +53,21 @@ class SitesController < ApplicationController
     else
       flash[:alert] = 'messages.site_not_ready'.t
     end
-    redirect_to site_path @site
+    redirect_to site_path(@site)
   end
 
   private
 
   def permitted_params
-    params.require(:site).permit(:name, :description, :url, :protocol, :http_method, :check_interval, :active)
+    params.require(:site).permit(
+      :name,
+      :description,
+      :url,
+      :protocol,
+      :http_method,
+      :check_interval,
+      :active
+    )
   end
 
   def load_site
