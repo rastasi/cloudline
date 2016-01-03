@@ -21,6 +21,7 @@ class ConditionsController < ApplicationController
     if condition
       redirect_to site_path(@site)
     else
+      flash[:error] = condition.errors.full_messages.to_sentence
       redirect_to new_site_condition(@site)
     end
   end
@@ -32,6 +33,7 @@ class ConditionsController < ApplicationController
     if @condition.update_attributes(permitted_params)
       redirect_to site_path(@site)
     else
+      flash[:error] = @condition.errors.full_messages.to_sentence
       redirect_to site_condition_path(@site, @condition)
     end
   end

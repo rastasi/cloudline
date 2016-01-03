@@ -18,6 +18,7 @@ class SitesController < ApplicationController
     if @site
       redirect_to site_path(@site)
     else
+      flash[:error] = @site.errors.full_messages.to_sentence
       redirect_to new_site_path()
     end
   end
@@ -29,6 +30,7 @@ class SitesController < ApplicationController
     if @site.update_attributes(permitted_params)
       redirect_to site_path(@site)
     else
+      flash[:error] = @site.errors.full_messages.to_sentence
       redirect_to edit_site_path(@site)
     end
   end
@@ -39,8 +41,12 @@ class SitesController < ApplicationController
   end
 
   def check
-    ::CheckProcess.new(@site)
-    flash[:alert] = 'message.site_checked'.t
+    check_process = ::CheckProcess.new(@site)
+    if check_process.ready?
+      flash[:success] = 'messages.site_ready'.t
+    else
+      flash[:alert] = 'messages.site_not_ready'.t
+    end
     redirect_to site_path @site
   end
 

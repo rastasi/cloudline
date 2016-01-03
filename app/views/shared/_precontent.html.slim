@@ -2,9 +2,6 @@
   ul.breadcrumbs
     - @bcs.each do |item|
       li=item
-- if flash[:error]
-  .alert-box.warning
-    =flash[:error]
-- if flash[:success]
-  .alert-box.success
-    =flash[:success]
+.flash
+  - flash.each do |name, message|
+    .alert-box class=name =message

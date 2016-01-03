@@ -1,23 +1,29 @@
-User.create!(
+user = User.create!(
   email: 'admin@example.com',
   password: 'password',
   password_confirmation: 'password'
 )
 
-Site.create!(
+site1 = Site.create!(
   name: 'Syrakuza',
   url: 'syrakuza.hu',
-  protocol: 'http',
-  active: true,
-  check_interval: 10,
-  user_id: 1
+  user: user
 )
 
-Site.create!(
+Condition.create!(
+  ctype: 'with_response_code',
+  value: 200,
+  site: site1
+)
+
+site2 = Site.create!(
   name: 'Teletype.hu',
   url: 'teletype.hu',
-  protocol: 'http',
-  active: true,
-  check_interval: 10,
-  user_id: 1
+  user: user
+)
+
+Condition.create!(
+  ctype: 'with_response_code',
+  value: 200,
+  site: site2
 )

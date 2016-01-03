@@ -56,3 +56,6 @@ en:
   profile:
     title: Profile
     email: E-mail
+  messages:
+    site_ready: 'Site is ready'
+    site_not_ready: 'Site is not ready'
