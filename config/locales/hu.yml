@@ -58,6 +58,7 @@ hu:
   profile:
     title: Profil
     email: E-mail
+    role: Szerepkör
   messages:
     site_ready: 'Az oldal rendben'
     site_not_ready: 'Az oldal nincs rendben'

@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+
+  include ApplicationHelper
+
   protect_from_forgery with: :exception
   before_filter :set_language
 
@@ -23,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_ownership
-    redirect_to error_403_path if @site.user != current_user
+    redirect_403 if @site.user != current_user
   end
 
 end
