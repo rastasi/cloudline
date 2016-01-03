@@ -1,6 +1,4 @@
-.info-menu
-  = link_to 'info.menu.about_us'.t, info_about_us_path
-  | |
-  = link_to 'info.menu.premium'.t, info_premium_path
-  | |
-  = link_to 'info.menu.contact'.t, info_contact_path
+ul.inline-list.info-menu
+  li= link_to 'info.menu.about_us'.t, info_about_us_path
+  li= link_to 'info.menu.premium'.t, info_premium_path
+  li= link_to 'info.menu.contact'.t, info_contact_path

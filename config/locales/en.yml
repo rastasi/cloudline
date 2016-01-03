@@ -65,6 +65,9 @@ en:
     virgin: Virgin
     ready: Ready
     failed: Failed
+  language:
+    en: english
+    hu: magyar
   info:
     menu:
       about_us: About us

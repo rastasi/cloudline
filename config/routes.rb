@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     get :contact
   end
 
+  get "/change_language/:code" => "application#change_language", as: :change_language
+
   get "/403" => "errors#forbidden", as: :error_403
   get "/404" => "errors#not_found", as: :error_404
   get "/500" => "errors#internal_server_error", as: :error_500

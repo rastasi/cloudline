@@ -1,0 +1,84 @@
+hu:
+  yes: igen
+  no: nem
+  menu:
+    profile: Profil
+    admin: Admin
+    sites: Oldalak
+    recent_logs: Legutóbbi naplóbejegyzések
+    login: Bejelentkezés
+    logout: Kijelentkezés
+  sites:
+    title:
+      index: Oldalak
+      show: "%{site} részletei"
+      edit: "%{site} szerkesztése"
+      new: Új oldal
+    name: Név
+    url: URL
+    operations: Műveletek
+    edit: Szerkesztés
+    conditions: Feltételek
+    logs: Naplóbejegyzések
+    check: Ellenőrzés
+    delete: Törlés
+    description: Leírás
+    protocol: Protokol
+    active: Aktív
+    status: Állapot
+    http_method: HTTP method
+    back: Vissza
+    new: Új oldal
+    save: Oldal mentése
+    update: Oldal frissítése
+    new_condition: Új feltétel
+    check_interval: Ellenőrzési időköz
+  conditions:
+    title:
+      index: Feltételek
+      new: Új feltétel
+    type: Típus
+    value: Érték
+    save: Feltétel mentése
+    update: Feltétel frissítése
+    edit: Szerkesztés
+    delete: Törlés
+  logs:
+    title:
+      index: "%{site} naplóbejegyzései"
+      show: "%{site} naplóbejegyzése"
+    back: Vissza
+    back_site: Vissza az oldalhoz
+    details: Részletek
+    status: Állapot
+    created_at: Létrehozva
+    type: Típus
+    value: Érték
+    ready: Rendben?
+  profile:
+    title: Profil
+    email: E-mail
+  messages:
+    site_ready: 'Az oldal rendben'
+    site_not_ready: 'Az oldal nincs rendben'
+  status:
+    virgin: Szűz
+    ready: Rendben
+    failed: Hibás
+  language:
+    en: english
+    hu: magyar
+  info:
+    menu:
+      about_us: Rólunk
+      premium: Prémium
+      contact: Kapcsolat
+    about_us:
+      title: Rólunk
+      content_html: "INFO"
+    premium:
+      title: Prémium
+      content_html: "INFO"
+    contact:
+      title: Kapcsolat
+      content_html: "INFO"

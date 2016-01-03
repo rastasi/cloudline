@@ -1,0 +1,3 @@
+ul.languages.inline-list
+  - LANGUAGES.each do |language|
+      li= link_to "language.#{language}".t, change_language_path(language)

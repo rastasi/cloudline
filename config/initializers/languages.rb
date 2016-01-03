@@ -1,0 +1,4 @@
+LANGUAGES = [
+  :en,
+  :hu
+]
