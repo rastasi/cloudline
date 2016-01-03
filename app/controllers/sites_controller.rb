@@ -3,8 +3,6 @@ class SitesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_site, :check_ownership, except: [:index, :new, :create]
 
-  NORMAL_USER_MAXIMUM_SITES_COUNT = 5
-
   def index
     load_sites
   end
@@ -13,7 +11,7 @@ class SitesController < ApplicationController
   end
 
   def new
-    if current_user.is_normal? && current_user.sites.count >= NORMAL_USER_MAXIMUM_SITES_COUNT
+    if current_user.can_create_site?
       flash[:alert] = 'messages.maximum_site'.t
       redirect_to sites_path
     end
