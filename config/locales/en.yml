@@ -60,4 +60,16 @@ en:
     site_ready: 'Site is ready'
     site_not_ready: 'Site is not ready'
   info:
-    about_us_html: "INFO"
+    menu:
+      about_us: About us
+      premium: Premium
+      contact: Contact
+    about_us:
+      title: About us
+      content_html: "INFO"
+    premium:
+      title: Premium
+      content_html: "INFO"
+    contact:
+      title: Contact
+      content_html: "INFO"

@@ -1,7 +1,7 @@
 user = User.create!(
-  email: 'admin@example.com',
-  password: 'password',
-  password_confirmation: 'password'
+  email: 'admin@cloudline.hu',
+  password: 'archimedes123',
+  password_confirmation: 'archimedes123'
 )
 
 site1 = Site.create!(
