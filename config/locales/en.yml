@@ -1,4 +1,6 @@
 en:
+  yes: yes
+  no: no
   menu:
     profile: Profile
     admin: Admin
@@ -59,6 +61,10 @@ en:
   messages:
     site_ready: 'Site is ready'
     site_not_ready: 'Site is not ready'
+  status:
+    virgin: Virgin
+    ready: Ready
+    failed: Failed
   info:
     menu:
       about_us: About us

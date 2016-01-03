@@ -5,7 +5,7 @@ table.large-12.columns
     td=@log.created_at
   tr
     th="logs.status".t
-    td=@log.status
+    td=formatted_status(@log.status).html_safe
 
 h3="logs.details".t
 table.large-12.columns
@@ -17,7 +17,7 @@ table.large-12.columns
     tr
       td= condition["ctype"]
       td= condition["value"]
-      td= condition["ready"]
+      td= yes_no condition["ready"]
 
 .operations.button-group.right
   li= link_to "logs.back".t, site_logs_path(@site), class: :button

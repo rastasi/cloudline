@@ -17,10 +17,10 @@ table.large-12.columns
     td=@site.check_interval_formatted
   tr
     th="sites.active".t
-    td=@site.active
+    td=yes_no @site.active
   tr
     th="sites.status".t
-    td=@site.status
+    td= formatted_status(@site.status).html_safe
 
 h3= "conditions.title.index".t
 table.large-12.columns

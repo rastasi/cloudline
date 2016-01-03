@@ -7,7 +7,7 @@ table.large-12.columns
   - @logs.each do |log|
     tr
       td= log.created_at
-      td= log.status
+      td= formatted_status(log.status).html_safe
       td= link_to "logs.details".t, site_log_path(@site, log), class: "button right"
 .operations.button-group.right
   li= link_to "logs.back".t, site_path(@site), class: :button
