@@ -20,7 +20,9 @@ class SitesController < ApplicationController
   end
 
   def create
-    @site = Site.create!(permitted_params)
+    @site = Site.new(permitted_params)
+    @site.user = current_user
+    @site.save
     if @site
       redirect_to site_path(@site)
     else
