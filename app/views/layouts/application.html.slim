@@ -12,12 +12,10 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
           li.name
             h1
               a href="/"  Cloudline
-          /! Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
           li.toggle-topbar.menu-icon
             a href="#"
               span Menu
         section.top-bar-section
-          /! Right Nav Section
           ul.right=render partial: 'shared/menu'
 
         // CONTENT
@@ -28,11 +26,9 @@ html lang='en' xmlns='http://www.w3.org/1999/xhtml'
                 .precontent=render 'shared/precontent'
                 .content=yield
           .row
-            .large-12.columns
+            .large-12.columns.text-center
               #footer.center=render 'shared/footer'
-          .row
-            .large-12.columns
-              #info-menu.center=render 'shared/info_menu'
+              #info-menu.text-center=render 'shared/info_menu'
 
           a.exit-off-canvas
     #RevealModal class='reveal-modal' data-reveal='true'
