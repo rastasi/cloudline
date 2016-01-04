@@ -29,4 +29,8 @@ class ApplicationController < ActionController::Base
     redirect_403 if @site.user != current_user
   end
 
+  def current_user_is_admin?
+    redirect_403 unless current_user.is_admin?
+  end
+
 end
