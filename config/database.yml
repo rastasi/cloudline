@@ -5,3 +5,13 @@ development:
   username: root
   password: ''
   host: localhost
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  database: cloudline_test
+  username: root
+  password: ''
+  host: localhost
+
+cucumber:
+  <<: *test
