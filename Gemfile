@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'pg'
-
 gem 'slim-rails'
 gem 'foundation-rails'
 gem 'activeadmin', github: 'activeadmin'
