@@ -6,10 +6,15 @@
 
 require 'cucumber/rails'
 require 'capybara-screenshot/cucumber'
+require 'selenium-webdriver'
+require 'selenium/phantomjs/capybara'
+Capybara.default_driver = :selenium_phantomjs
+
+#Capybara.javascript_driver = :selenium_phantomjs
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
-# selectors in your step definitions to use the XPath syntax.
+# selectors in your selenistep definitions to use the XPath syntax.
 # Capybara.default_selector = :xpath
 
 # By default, any exception happening in your Rails application will bubble up

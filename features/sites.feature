@@ -15,3 +15,15 @@ Feature: Sites
     And I fill in "site_url" with "google.com"
     And I click button "Save site"
     Then I should see "Details of Google"
+
+  Scenario: Show site
+    Given I have a site named "Google" with url "google.com" for user "test@cloudline.hu"
+    When I am on the site page named "Google"
+    Then I should see "Details of Google"
+
+  Scenario: Delete site
+    Given I have a site named "Google" with url "google.com" for user "test@cloudline.hu"
+    When I am on the site page named "Google"
+    And I click link "Delete"
+    And I click "OK" in the "Are you certain you want to delete this?" alert box
+    Then I should see "Details of Google"

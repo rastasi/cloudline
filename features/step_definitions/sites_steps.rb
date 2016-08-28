@@ -8,7 +8,7 @@ end
 
 Given(/^I have a site named "([^"]*)" with url "([^"]*)" for user "([^"]*)"$/) do |name, url, user|
   user = User.find_by_email(user)
-  Site.create!(
+  Site.create(
     name: name,
     url: url,
     user: user
